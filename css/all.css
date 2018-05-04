@@ -1,0 +1,198 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+.wrap {
+  max-width: 1024px;
+  margin: 0 auto;
+  background-color: #f7f7f7; }
+
+.clearfix {
+  clear: both; }
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.header {
+  height: 380px;
+  background-image: url(../img/Hero.png); }
+  .header h1 {
+    color: #fff;
+    font-size: 40px;
+    letter-spacing: 3.89px;
+    text-align: center;
+    padding-top: 90px; }
+  .header select {
+    display: block;
+    margin: 80px auto 80px auto;
+    width: 450px;
+    height: 48px;
+    font-size: 18px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 3px solid #FFFFFF;
+    border-radius: 3px;
+    cursor: pointer; }
+
+.hotArea {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 20px; }
+  .hotArea h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #000000;
+    font-weight: bold; }
+  .hotArea input {
+    font-size: 24px;
+    float: left;
+    border-radius: 5px;
+    width: 130px;
+    height: 42px;
+    margin-left: 30px;
+    color: #fff;
+    padding: 3px; }
+  .hotArea input:nth-child(2) {
+    background: #8A82CC; }
+  .hotArea input:nth-child(3) {
+    background: #FFA782; }
+  .hotArea input:nth-child(4) {
+    background: #F5D005; }
+  .hotArea input:nth-child(5) {
+    background: #559AC8; }
+
+.main {
+  padding-bottom: 100px; }
+  .main .divideLine {
+    width: 90%;
+    margin: 120px auto 50px auto;
+    border-width: 1px;
+    border-style: dashed;
+    border-color: #559ac8; }
+  .main .title h2 {
+    color: #8a82cc;
+    font-size: 36px;
+    line-height: 43px;
+    text-align: center;
+    font-weight: bolder;
+    margin-bottom: 24px; }
+
+.travelInfo {
+  margin: 0 2% 0 2%; }
+  .travelInfo li {
+    margin: 0 1% 50px 1%;
+    float: left;
+    width: 48%;
+    height: 350px;
+    background: #FFFFFF;
+    -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+    padding-bottom: 5px;
+    position: relative; }
+    .travelInfo li .card {
+      position: relative;
+      background-image: url(http://khh.travel/FileArtPic.ashx?id=705&w=1280&h=960);
+      background-size: cover;
+      background-position: center;
+      padding-top: 145px;
+      padding-bottom: 16px;
+      margin-bottom: 16px; }
+      .travelInfo li .card h3 {
+        font-size: 24px;
+        color: #fff;
+        margin-left: 24px; }
+      .travelInfo li .card h4 {
+        color: #fff;
+        position: absolute;
+        right: 24px;
+        bottom: 12px; }
+    .travelInfo li p {
+      font-size: 16px;
+      color: #000000;
+      margin-bottom: 16px;
+      margin-left: 20px;
+      margin-right: 20px; }
+    .travelInfo li .fee {
+      position: absolute;
+      right: 20px;
+      bottom: 5px; }
+    .travelInfo li .openTime::before, .travelInfo li .address::before, .travelInfo li .tel::before, .travelInfo li .fee::before {
+      content: '';
+      display: inline-block;
+      height: 20px;
+      width: 20px;
+      margin-right: 10px;
+      background-repeat: no-repeat;
+      vertical-align: middle; }
+    .travelInfo li .openTime::before {
+      background-image: url(../img/icons_clock.png); }
+    .travelInfo li .address::before {
+      background-image: url(../img/icons_pin.png); }
+    .travelInfo li .tel::before {
+      background-image: url(../img/icons_phone.png); }
+    .travelInfo li .fee::before {
+      background-image: url(../img/icons_tag.png); }
+
+.footer {
+  background: #559AC8; }
+  .footer h5 {
+    text-align: center;
+    color: #fff;
+    padding-top: 20px;
+    margin-bottom: 10px; }
+  .footer p {
+    text-align: center;
+    font-size: 14px;
+    color: #FFD366;
+    padding-bottom: 20px; }
