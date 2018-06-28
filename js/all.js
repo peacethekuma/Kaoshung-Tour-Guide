@@ -14,7 +14,7 @@ var popData = document.getElementById('popCardId');
 
 // AJAX取得資料 & 選單選項
 var xhr = new XMLHttpRequest();
-xhr.open("get", "js/data.JSON", true);
+xhr.open("get", "js/data.json", true);
 xhr.send(null);
 xhr.onload = function () {
   if (xhr.readyState === 4) {

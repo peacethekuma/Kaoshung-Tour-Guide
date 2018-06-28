@@ -28,7 +28,9 @@ footer, header, hgroup, menu, nav, section {
   display: block; }
 
 body {
-  line-height: 1; }
+  line-height: 1; 
+
+}
 
 ol, ul {
   list-style: none; }
@@ -116,7 +118,7 @@ img {
   
 
 .main {
-  padding-bottom: 100px; }
+  padding-bottom: 200px; }
   .main .divideLine {
     width: 90%;
     margin: 120px auto 50px auto;
@@ -197,7 +199,12 @@ img {
       background-image: url(../img/icons_tag.png); }
 
 .footer {
-  background: #559AC8; }
+    background: #559AC8;
+    position: absolute;
+    left: 0;
+    right: 0; }
+
+
   .footer h5 {
     text-align: center;
     color: #fff;
