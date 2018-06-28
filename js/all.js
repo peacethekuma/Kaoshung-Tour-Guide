@@ -1,4 +1,6 @@
 var data = [];
+var zoneArray=[];
+var area = document.getElementById('areaID');
 
 console.log(data.length);
 
@@ -7,23 +9,37 @@ var list = document.querySelector('.travelInfo');
 var area = document.getElementById('areaId');
 var btn = document.querySelectorAll('.btn');
 
-// AJAX
+// AJAX取得資料 & 選單選項
 var xhr = new XMLHttpRequest();
-xhr.open("get", "js/data.json", true);
+xhr.open("get", "js/data.JSON", true);
 xhr.send(null);
 xhr.onload = function () {
   if (xhr.readyState === 4) {
     if (xhr.status === 200) {
+      let str='';
       var rawData = JSON.parse(xhr.responseText);
       data = rawData.result.records;
-      console.log(data);
+      for (let i = 0; i < data.length; i++) {
+        zoneArray.push(data[i].Zone);
+      } 
+      var zoneList = zoneArray.filter(function (item,index,array) {
+        return array.indexOf(item) === index;
+      })
+      for (let j = 0; j < zoneList.length; j++) {
+        str += '<option value="' +zoneList[j]+'">'+zoneList[j]+'</option>';
+      }
+      area.innerHTML = '<option value="">--請選擇行政區--</option>'+ str;
+
+      
     }
   }
 }
 
 
 
-//將資料印在畫面
+
+
+//將資料渲染至畫面
 function updateList(e) {
   var str = '';
   for (var i = 0; i < data.length; i++) {
