@@ -142,6 +142,11 @@ img {
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
     padding-bottom: 5px;
     position: relative; }
+    .travelInfo a{
+      width: 100%;
+      height: auto;
+      z-index: 99;
+    }
     .travelInfo li .card {
       position: relative;
       background-image: url(http://khh.travel/FileArtPic.ashx?id=705&w=1280&h=960);
@@ -149,7 +154,7 @@ img {
       background-position: center;
       padding-top: 145px;
       padding-bottom: 16px;
-      margin-bottom: 16px; }
+      margin-bottom: 30px; }
       .travelInfo li .card h3 {
         font-size: 24px;
         color: #fff;
@@ -198,3 +203,80 @@ img {
     font-size: 14px;
     color: #FFD366;
     padding-bottom: 20px; }
+
+
+    /*彈出視窗*/
+#popDataId{
+	display: none;
+	width: 100%;
+  height: 100%;
+  top:0;
+  left: 0;
+	position: fixed;
+	z-index: 10;
+	background-color: rgba(147, 136, 136, 0.5);
+}
+
+
+.popCard{
+  position: relative;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 60px;
+  background-color: #fff;
+  padding-bottom: 30px;
+  border-radius: 5px;
+}
+
+.popCard h3 {
+        font-size: 24px;
+        color: #fff;
+        margin-left: 40px; }
+.popCard h4 {
+        color: #fff;
+        position: absolute;
+        right: 24px;
+        bottom: 12px; }
+
+.popCard p {
+      font-size: 16px;
+      color: #000000;
+      margin-bottom: 16px;
+      margin-left: 50px;
+      margin-right: 50px;
+      line-height: 1.5; 
+    }
+
+    .popCard .fee {
+      position: absolute;
+      right: 20px;
+      bottom: 20px; }
+    .popCard .openTime::before, .popCard .address::before, .popCard .tel::before, .popCard .fee::before {
+      content: '';
+      display: inline-block;
+      height: 20px;
+      width: 20px;
+      margin-right: 10px;
+      background-repeat: no-repeat;
+      vertical-align: middle; }
+    .popCard .openTime::before {
+      background-image: url(../img/icons_clock.png); }
+    .popCard .address::before {
+      background-image: url(../img/icons_pin.png); }
+    .popCard .tel::before {
+      background-image: url(../img/icons_phone.png); }
+    .popCard .fee::before {
+      background-image: url(../img/icons_tag.png); }
+
+.infoCard{
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  padding-top: 250px;
+  padding-bottom: 16px;
+  margin-bottom: 16px; 
+  border-radius: 5px 5px 0 0 ;
+}
+
+
+
