@@ -7,7 +7,7 @@ var title = document.querySelector('.title');
 var list = document.querySelector('.travelInfo');
 var area = document.getElementById('areaId');
 var btn = document.querySelectorAll('.btn');
-var popData = document.getElementById('popDataId');
+var popData = document.getElementById('popCardId');
 
 
 
@@ -43,7 +43,7 @@ for (var i = 0; i < btn.length; i++) {
   btn[i].addEventListener('click', updateList, false);
 }
 
-list.addEventListener('click', popInfo, true);
+list.addEventListener('click', popInfo, false);
 popData.addEventListener("click", closeInfo, false);
 
 
@@ -58,10 +58,10 @@ function updateList(e) {
   }
   for (let j = 0; j < nowData.length; j++) {
     if (nowData[j].Ticketinfo === '免費參觀') {
-      var content = '<li><a href="#" data-num="' + j + '"><div class="card" style="background-image: url(' + nowData[j].Picture1 + ')"><h3>' + nowData[j].Name + '</h3><h4>' + nowData[j].Zone + '</h4></div><p class="openTime">' + nowData[j].Opentime + '</p><p class="address">' + nowData[j].Add + '</p><p class="tel">' + nowData[j].Tel + '</p><p class="fee">' + nowData[j].Ticketinfo + '</p></a></li>'
+      var content = '<li><div class="card" style="background-image: url(' + nowData[j].Picture1 + ')"><h3>' + nowData[j].Name + '</h3><h4>' + nowData[j].Zone + '</h4></div><p class="openTime">' + nowData[j].Opentime + '</p><p class="address">' + nowData[j].Add + '</p><p class="tel">' + nowData[j].Tel + '</p><p class="fee">' + nowData[j].Ticketinfo + '</p><a href="#" data-num="' + j + '"></a></li>'
       str += content;
     } else {
-      var content = '<li><a href="#" data-num="' + j + '"><div class="card" style="background-image: url(' + nowData[j].Picture1 + ')"><h3>' + nowData[j].Name + '</h3><h4>' + nowData[j].Zone + '</h4></div><p class="openTime">' + nowData[j].Opentime + '</p><p class="address">' + nowData[j].Add + '</p><p class="tel">' + nowData[j].Tel + '</p></a></li>'
+      var content = '<li><div class="card" style="background-image: url(' + nowData[j].Picture1 + ')"><h3>' + nowData[j].Name + '</h3><h4>' + nowData[j].Zone + '</h4></div><p class="openTime">' + nowData[j].Opentime + '</p><p class="address">' + nowData[j].Add + '</p><p class="tel">' + nowData[j].Tel + '</p><a href="#" data-num="' + j + '"></a></li>'
       str += content;
     }
   }
@@ -76,30 +76,32 @@ function popInfo(e) {
   if (e.target.nodeName !== 'A') {
     return;
   }
-  var Num = e.target.dataset.num;
-  console.log(Num);
+  var num = e.target.dataset.num;
+  console.log(num);
   var str = `
             <div class="popCard">
       
-                <div class="infoCard" style="background-image: url(${showData[Num].Picture1})">
-                    <h3>${showData[Num].Name}</h3>
-                    <h4>${showData[Num].Zone}</h4>
+                <div class="infoCard" style="background-image: url(${showData[num].Picture1})">
+                    <h3>${showData[num].Name}</h3>
+                    <h4>${showData[num].Zone}</h4>
                 </div>
-                <p class="description">${showData[Num].Description}</p>
-                <p class="openTime">${showData[Num].Opentime}</p>
-                <p class="address">${showData[Num].Add}</p>
-                <p class="tel">${showData[Num].Tel}</p>
-                <p class="fee">${showData[Num].Ticketinfo}</p>
+                <p class="description">${showData[num].Description}</p>
+                <p class="openTime">${showData[num].Opentime}</p>
+                <p class="address">${showData[num].Add}</p>
+                <p class="tel">${showData[num].Tel}</p>
+                <p class="fee">${showData[num].Ticketinfo}</p>
             </div>
   `;
   popData.innerHTML = str;
-  popData.style.display = "block";
+  popData.style.visibility = "visible";
+  popData.style.opacity= "1";
 }
 
 function closeInfo(e) {
   e.stopPropagation();
-  if (e.target.id === "popDataId") {
-    popData.style.display = "none";
+  if (e.target.id === "popCardId") {
+    popData.style.visibility = "hidden";
+    popData.style.opacity = "0";
   }
 }
 
